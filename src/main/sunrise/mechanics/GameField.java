@@ -31,7 +31,6 @@ public class GameField extends JPanel {
     private final Sun sun;
 
     private final Scores scores;
-    private LinkedList<Integer> gameScores;
 
     private GameTimer gameTimer;
     private LinkedList<Integer> gameTimes;
@@ -54,7 +53,6 @@ public class GameField extends JPanel {
         this.points = points;
 
         scores = new Scores();
-        gameScores = new LinkedList<>();
 
         gameTimer = new GameTimer();
         gameTimes = new LinkedList<>();
@@ -228,9 +226,8 @@ public class GameField extends JPanel {
     }
 
     public void writeGameDataToFiles() throws IOException {
-        gameScores.add(scores.getScore());
-        scores.writeScoresToFile(gameScores);
-        scores.writeHighScoreToFile();
+        scores.recordScore();
+        scores.writeToFile();
         gameTimer.end();
         gameTimes.add(gameTimer.getTimeElapsed());
         gameTimer.writeGameTimeToFile(gameTimes);

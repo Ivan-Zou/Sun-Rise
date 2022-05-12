@@ -3,28 +3,46 @@ package src.main.sunrise.gamedata;
 import src.main.sunrise.misc.Constants;
 
 import java.io.*;
-import java.nio.file.Paths;
 import java.util.LinkedList;
 
 public class Scores {
-    private int highScore;
-    private int score;
+    private int highScore, score;
+    private final LinkedList<Integer> allScores;
 
     public Scores() {
+        score = 0;
+        setHighScoreFromFile();
+        allScores = new LinkedList<>();
+    }
+
+    public void setHighScoreFromFile() {
         try {
-            score = 0;
-            setHighScoreFromFile();
+            BufferedReader reader = new BufferedReader
+                    (new FileReader(Constants.HIGH_SCORE_FILE));
+            String line = reader.readLine();
+            highScore = getHighScoreFromString(line);
+            reader.close();
         } catch (IOException exception) {
+            // File Does Not Exist
             highScore = 0;
         }
+
+    }
+
+    public int getHighScoreFromString(String line) {
+        int high;
+        try {
+            high = Integer.parseInt(line.substring(12));
+        } catch (IndexOutOfBoundsException |
+                NullPointerException |
+                NumberFormatException exception) {
+            high = 0;
+        }
+        return high;
     }
 
     public int getScore() {
         return score;
-    }
-
-    public int getHighScore() {
-        return highScore;
     }
 
     public void setScores(int score) {
@@ -38,46 +56,52 @@ public class Scores {
         }
     }
 
-    public void writeHighScoreToFile() throws IOException {
-        String stringOfHighScore = "High Score: " + highScore;
-        File file = Paths.get(Constants.HIGH_SCORE_FILE).toFile();
-        FileWriter fileWriter = new FileWriter(file, false);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(stringOfHighScore);
-        writer.flush();
-        writer.close();
+    public int getHighScore() {
+        return highScore;
     }
 
-    public int getHighScoreFromString(String line) {
-        int highscr;
+    public LinkedList<Integer> getAllRecordedScores() {
+        return allScores;
+    }
+
+    public void recordScore() {
+        allScores.add(score);
+    }
+
+    public void writeToFile() {
+        writeScoresToFile();
+        writeHighScoreToFile();
+    }
+
+    private void writeScoresToFile() {
         try {
-            highscr = Integer.parseInt(line.substring(12));
-        } catch (IndexOutOfBoundsException | NullPointerException | NumberFormatException
-                exception) {
-            highscr = 0;
-        }
-        return highscr;
-    }
-
-    public void setHighScoreFromFile() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(Constants.HIGH_SCORE_FILE));
-        String line = reader.readLine();
-        highScore = getHighScoreFromString(line);
-    }
-
-    public void writeScoresToFile(LinkedList<Integer> scores) throws IOException {
-        File file = Paths.get(Constants.SCORES_FILE).toFile();
-        FileWriter fileWriter = new FileWriter(file, false);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        int gameNumber = 0;
-        writer.write("Scores:");
-        writer.newLine();
-        for (int score: scores) {
-            gameNumber++;
-            writer.write("Game " + gameNumber + ": " + score);
+            BufferedWriter writer = new BufferedWriter
+                    (new FileWriter(Constants.SCORES_FILE, false));
+            int gameNumber = 0;
+            writer.write("Scores:");
             writer.newLine();
+            for (int score: allScores) {
+                gameNumber++;
+                writer.write("game " + gameNumber + ": " + score);
+                writer.newLine();
+            }
+            writer.flush();
+            writer.close();
+        } catch (IOException exception) {
+            System.out.println("Error: File Does Not Exist");
         }
-        writer.flush();
-        writer.close();
+    }
+
+    private void writeHighScoreToFile() {
+        try {
+            String stringOfHighScore = "High Score: " + highScore;
+            BufferedWriter writer = new BufferedWriter(
+                    new FileWriter(Constants.HIGH_SCORE_FILE, false));
+            writer.write(stringOfHighScore);
+            writer.flush();
+            writer.close();
+        } catch (IOException exception) {
+            System.out.println("Error: File Does Not Exist");
+        }
     }
 }
