@@ -10,12 +10,13 @@ import java.nio.file.Paths;
 import java.util.LinkedList;
 
 public class GameTimer {
-    private int startTime;
-    private int endTime;
+    private int startTime, endTime;
+    private final LinkedList<Integer> times;
 
     public GameTimer() {
         startTime = 0;
         endTime = 0;
+        times = new LinkedList<>();
     }
 
     public void start() {
@@ -39,11 +40,15 @@ public class GameTimer {
         endTime = 0;
     }
 
+    public void recordTime() {
+        times.add(getTimeElapsed());
+    }
+
     public int getTimeElapsed() {
         return endTime - startTime;
     }
 
-    public void writeGameTimeToFile(LinkedList<Integer> times) throws IOException {
+    public void writeGameTimeToFile() throws IOException {
         File file = Paths.get(Constants.GAME_TIME_FILE).toFile();
         FileWriter fileWriter = new FileWriter(file, false);
         BufferedWriter writer = new BufferedWriter(fileWriter);
@@ -61,9 +66,11 @@ public class GameTimer {
         writer.close();
     }
 
-    public static int getHours(int timeInSeconds) {
+    public static int getSeconds(int timeInSeconds) {
         if (timeInSeconds >= 0) {
-            return (timeInSeconds / 3600);
+            return (timeInSeconds -
+                    (getMinutes(timeInSeconds) * 60) -
+                    (getHours(timeInSeconds) * 3600));
         } else {
             return 0;
         }
@@ -77,13 +84,12 @@ public class GameTimer {
         }
     }
 
-    public static int getSeconds(int timeInSeconds) {
+    public static int getHours(int timeInSeconds) {
         if (timeInSeconds >= 0) {
-            return (timeInSeconds -
-                    (getMinutes(timeInSeconds) * 60) -
-                    (getHours(timeInSeconds) * 3600));
+            return (timeInSeconds / 3600);
         } else {
             return 0;
         }
     }
+
 }

@@ -33,7 +33,6 @@ public class GameField extends JPanel {
     private final Scores scores;
 
     private GameTimer gameTimer;
-    private LinkedList<Integer> gameTimes;
 
     private LinkedList<Cloud> clouds;
 
@@ -55,7 +54,6 @@ public class GameField extends JPanel {
         scores = new Scores();
 
         gameTimer = new GameTimer();
-        gameTimes = new LinkedList<>();
 
         sun = new Sun(Constants.SUN_STARTING_X, Constants.SUN_STARTING_Y,
                       Constants.SUN_RADIUS, Direction.LEFT_SUN);
@@ -229,8 +227,8 @@ public class GameField extends JPanel {
         scores.recordScore();
         scores.writeToFile();
         gameTimer.end();
-        gameTimes.add(gameTimer.getTimeElapsed());
-        gameTimer.writeGameTimeToFile(gameTimes);
+        gameTimer.recordTime();
+        gameTimer.writeGameTimeToFile();
         status.setText("Game Over!");
     }
 
