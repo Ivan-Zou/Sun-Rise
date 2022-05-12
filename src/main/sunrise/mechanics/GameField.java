@@ -204,7 +204,7 @@ public class GameField extends JPanel {
         screen = Screens.INSTRUCTION_1;
         clouds.clear();
         gameTimer.reset();
-        scores.setScores(0);
+        scores.reset();
         status.setText("Running...");
         points.setText("Points: " + scores.getScore());
         sun.stop();

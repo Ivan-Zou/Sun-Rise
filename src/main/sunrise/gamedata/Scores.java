@@ -56,6 +56,10 @@ public class Scores {
         }
     }
 
+    public void reset() {
+        score = 0;
+    }
+
     public int getHighScore() {
         return highScore;
     }
@@ -88,7 +92,7 @@ public class Scores {
             writer.flush();
             writer.close();
         } catch (IOException exception) {
-            System.out.println("Error: File Does Not Exist");
+            exception.printStackTrace();
         }
     }
 
@@ -101,7 +105,7 @@ public class Scores {
             writer.flush();
             writer.close();
         } catch (IOException exception) {
-            System.out.println("Error: File Does Not Exist");
+            exception.printStackTrace();
         }
     }
 }

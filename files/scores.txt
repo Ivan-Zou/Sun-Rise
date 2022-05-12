@@ -1,5 +1,0 @@
-Scores:
-game 1: 0
-game 2: 31
-game 3: 48
-game 4: 15
