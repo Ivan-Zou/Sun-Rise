@@ -16,24 +16,18 @@ import java.util.LinkedList;
 
 public class GameField extends JPanel {
     private Image startScreenImage;
-    private Image instructionScreenImage;
-    private Image instructionScreen2Image;
-    private Image instructionScreen3Image;
+    private Image instructionScreenImage, instructionScreen2Image, instructionScreen3Image;
     private Image skyImage;
     private Image gameOverScreenImage;
     private Image errorScreenImage;
 
     private Screens screen;
-
-    private JLabel status;
-    private JLabel points;
-
-    private final Sun sun;
+    private JLabel status, points;
 
     private final Scores scores;
-
     private GameTimer gameTimer;
 
+    private final Sun sun;
     private LinkedList<Cloud> clouds;
 
     private boolean fileIsWritten;
@@ -160,6 +154,33 @@ public class GameField extends JPanel {
         repaint();
     }
 
+    public void writeGameDataToFiles() throws IOException {
+        scores.recordScore();
+        scores.writeToFile();
+        gameTimer.end();
+        gameTimer.recordTime();
+        gameTimer.writeGameTimeToFile();
+        status.setText("Game Over!");
+    }
+
+    public void reset()  {
+        fileIsWritten = false;
+        screen = Screens.INSTRUCTION_1;
+        clouds.clear();
+        gameTimer.reset();
+        scores.reset();
+        status.setText("Running...");
+        points.setText("Points: " + scores.getScore());
+        sun.stop();
+        sun.resetPosition();
+        sun.setRadius(Constants.SUN_RADIUS);
+        requestFocusInWindow();
+    }
+
+    public void gameOver() {
+        screen = Screens.GAME_OVER;
+    }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -197,20 +218,6 @@ public class GameField extends JPanel {
         }
     }
 
-    public void reset()  {
-        fileIsWritten = false;
-        screen = Screens.INSTRUCTION_1;
-        clouds.clear();
-        gameTimer.reset();
-        scores.reset();
-        status.setText("Running...");
-        points.setText("Points: " + scores.getScore());
-        sun.stop();
-        sun.resetPosition();
-        sun.setRadius(Constants.SUN_RADIUS);
-        requestFocusInWindow();
-    }
-
     public Sun getSun() {
         return sun;
     }
@@ -221,19 +228,6 @@ public class GameField extends JPanel {
 
     public Screens getScreen() {
         return screen;
-    }
-
-    public void writeGameDataToFiles() throws IOException {
-        scores.recordScore();
-        scores.writeToFile();
-        gameTimer.end();
-        gameTimer.recordTime();
-        gameTimer.writeGameTimeToFile();
-        status.setText("Game Over!");
-    }
-
-    public void gameOver() {
-        screen = Screens.GAME_OVER;
     }
 
     @Override
