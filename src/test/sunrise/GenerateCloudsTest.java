@@ -1,6 +1,8 @@
-package sunrise;
+package src.test.sunrise;
 
 import org.junit.jupiter.api.Test;
+import src.main.sunrise.mechanics.GenerateClouds;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GenerateCloudsTest {

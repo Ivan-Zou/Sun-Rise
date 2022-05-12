@@ -1,11 +1,15 @@
-package sunrise;
+package src.main.sunrise.objects;
+
+import src.main.sunrise.mechanics.GameField;
+import src.main.sunrise.misc.Constants;
+import src.main.sunrise.misc.Direction;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Sun {
     private Image sunImage;
-    private ImageIcon sunIcon;
+    private final ImageIcon sunIcon;
 
     private int x;
     private int y;

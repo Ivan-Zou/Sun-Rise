@@ -1,6 +1,11 @@
-package sunrise;
+package src.test.sunrise;
 
 import org.junit.jupiter.api.*;
+
+import src.main.sunrise.mechanics.GameField;
+import src.main.sunrise.misc.*;
+import src.main.sunrise.objects.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CloudTest {

@@ -1,6 +1,8 @@
-package sunrise;
+package src.test.sunrise;
 
 import org.junit.jupiter.api.*;
+import src.main.sunrise.gamedata.Scores;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ScoresTest {

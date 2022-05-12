@@ -1,4 +1,8 @@
+package src.test;
+
 import org.junit.jupiter.api.*;
+import src.main.Game;
+
 import static org.junit.jupiter.api.Assertions.*;
 import java.lang.reflect.*;
 

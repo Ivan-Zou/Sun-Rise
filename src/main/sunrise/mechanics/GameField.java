@@ -1,4 +1,8 @@
-package sunrise;
+package src.main.sunrise.mechanics;
+
+import src.main.sunrise.misc.*;
+import src.main.sunrise.gamedata.*;
+import src.main.sunrise.objects.*;
 
 import javax.swing.*;
 import java.awt.*;

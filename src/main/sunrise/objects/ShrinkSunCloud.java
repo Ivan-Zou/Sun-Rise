@@ -1,4 +1,8 @@
-package sunrise;
+package src.main.sunrise.objects;
+
+import src.main.sunrise.misc.Constants;
+import src.main.sunrise.misc.Direction;
+import src.main.sunrise.mechanics.GameField;
 
 import java.awt.*;
 
