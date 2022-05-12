@@ -72,40 +72,32 @@ public class Scores {
         allScores.add(score);
     }
 
-    public void writeToFile() {
+    public void writeToFile() throws IOException {
         writeScoresToFile();
         writeHighScoreToFile();
     }
 
-    private void writeScoresToFile() {
-        try {
-            BufferedWriter writer = new BufferedWriter
-                    (new FileWriter(Constants.SCORES_FILE, false));
-            int gameNumber = 0;
-            writer.write("Scores:");
+    private void writeScoresToFile() throws IOException {
+        BufferedWriter writer = new BufferedWriter
+                (new FileWriter(Constants.SCORES_FILE, false));
+        int gameNumber = 0;
+        writer.write("Scores:");
+        writer.newLine();
+        for (int score: allScores) {
+            gameNumber++;
+            writer.write("game " + gameNumber + ": " + score);
             writer.newLine();
-            for (int score: allScores) {
-                gameNumber++;
-                writer.write("game " + gameNumber + ": " + score);
-                writer.newLine();
-            }
-            writer.flush();
-            writer.close();
-        } catch (IOException exception) {
-            exception.printStackTrace();
         }
+        writer.flush();
+        writer.close();
     }
 
-    private void writeHighScoreToFile() {
-        try {
-            String stringOfHighScore = "High Score: " + highScore;
-            BufferedWriter writer = new BufferedWriter(
-                    new FileWriter(Constants.HIGH_SCORE_FILE, false));
-            writer.write(stringOfHighScore);
-            writer.flush();
-            writer.close();
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
+    private void writeHighScoreToFile() throws IOException {
+        String stringOfHighScore = "High Score: " + highScore;
+        BufferedWriter writer = new BufferedWriter(
+                new FileWriter(Constants.HIGH_SCORE_FILE, false));
+        writer.write(stringOfHighScore);
+        writer.flush();
+        writer.close();
     }
 }
