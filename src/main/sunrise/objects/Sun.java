@@ -67,14 +67,14 @@ public class Sun {
         this.x += this.vx;
     }
 
-    public boolean detectScreenEdgeCollision() {
-        return this.x - this.radius < 0 || this.x + this.radius > Constants.FIELD_WIDTH;
-    }
-
     public void screenEdgeCollision(GameField gameField) {
         if (detectScreenEdgeCollision()) {
             gameField.gameOver();
         }
+    }
+
+    public boolean detectScreenEdgeCollision() {
+        return this.x - this.radius < 0 || this.x + this.radius > Constants.FIELD_WIDTH;
     }
 
     public void changeDirection() {
