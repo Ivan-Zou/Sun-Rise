@@ -1,12 +1,20 @@
 package src.test.sunrise;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import src.main.sunrise.mechanics.GameField;
-import src.main.sunrise.misc.*;
-import src.main.sunrise.objects.*;
+import src.main.sunrise.misc.Direction;
+import src.main.sunrise.misc.Screens;
+import src.main.sunrise.objects.Cloud;
+import src.main.sunrise.objects.NormalCloud;
+import src.main.sunrise.objects.PointCloud;
+import src.main.sunrise.objects.ShrinkSunCloud;
+import src.main.sunrise.objects.Sun;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class CloudTest {
 

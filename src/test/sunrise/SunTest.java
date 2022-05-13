@@ -1,11 +1,15 @@
 package src.test.sunrise;
 
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 import src.main.sunrise.mechanics.GameField;
-import src.main.sunrise.misc.*;
-import src.main.sunrise.objects.*;
+import src.main.sunrise.misc.Direction;
+import src.main.sunrise.misc.Screens;
+import src.main.sunrise.objects.Sun;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SunTest {
 
@@ -68,6 +72,6 @@ public class SunTest {
         }
         assertTrue(sun.detectScreenEdgeCollision());
         sun.screenEdgeCollision(gameField);
-        Assertions.assertEquals(Screens.GAME_OVER, gameField.getScreen());
+        assertEquals(Screens.GAME_OVER, gameField.getScreen());
     }
 }

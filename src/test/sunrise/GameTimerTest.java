@@ -1,9 +1,10 @@
 package src.test.sunrise;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
+
 import src.main.sunrise.gamedata.GameTimer;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameTimerTest {
 

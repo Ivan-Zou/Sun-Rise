@@ -1,16 +1,31 @@
 package src.main.sunrise.mechanics;
 
-import src.main.sunrise.misc.*;
-import src.main.sunrise.gamedata.*;
-import src.main.sunrise.objects.*;
+import src.main.sunrise.misc.Constants;
+import src.main.sunrise.misc.Direction;
+import src.main.sunrise.misc.Screens;
+import src.main.sunrise.gamedata.GameTimer;
+import src.main.sunrise.gamedata.Scores;
+import src.main.sunrise.objects.Cloud;
+import src.main.sunrise.objects.Sun;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.Timer;
+import javax.swing.BorderFactory;
+
+import java.awt.Image;
+import java.awt.Graphics;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.Dimension;
+import java.awt.Color;
+import java.awt.Font;
+
 import java.io.IOException;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 

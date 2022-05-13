@@ -3,10 +3,9 @@ package src.main.sunrise.gamedata;
 import src.main.sunrise.misc.Constants;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Paths;
+
 import java.util.LinkedList;
 
 public class GameTimer {
@@ -49,9 +48,8 @@ public class GameTimer {
     }
 
     public void writeGameTimeToFile() throws IOException {
-        File file = Paths.get(Constants.GAME_TIME_FILE).toFile();
-        FileWriter fileWriter = new FileWriter(file, false);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
+        BufferedWriter writer = new BufferedWriter
+                (new FileWriter(Constants.GAME_TIME_FILE, false));
         int gameNumber = 0;
         writer.write("Game Times:");
         writer.newLine();
@@ -91,5 +89,4 @@ public class GameTimer {
             return 0;
         }
     }
-
 }

@@ -5,7 +5,8 @@ import src.main.sunrise.misc.Constants;
 import src.main.sunrise.misc.Direction;
 import src.main.sunrise.gamedata.Scores;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public abstract class Cloud {
     private final int x;

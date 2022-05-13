@@ -2,7 +2,7 @@ package src.main;
 
 import src.main.sunrise.RunSunRise;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 
 public class Game {
     public static void main(String[] args) {

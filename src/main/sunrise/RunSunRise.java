@@ -3,8 +3,11 @@ package src.main.sunrise;
 import src.main.sunrise.mechanics.GameField;
 import src.main.sunrise.misc.Constants;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+import java.awt.BorderLayout;
 
 public class RunSunRise implements Runnable {
     public void run() {

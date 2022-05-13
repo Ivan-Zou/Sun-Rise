@@ -1,9 +1,12 @@
 package src.test.sunrise;
 
 import org.junit.jupiter.api.Test;
+
 import src.main.sunrise.mechanics.GenerateClouds;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GenerateCloudsTest {
 

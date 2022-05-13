@@ -2,7 +2,12 @@ package src.main.sunrise.gamedata;
 
 import src.main.sunrise.misc.Constants;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import java.util.LinkedList;
 
 public class Scores {
@@ -94,8 +99,8 @@ public class Scores {
 
     private void writeHighScoreToFile() throws IOException {
         String stringOfHighScore = "High Score: " + highScore;
-        BufferedWriter writer = new BufferedWriter(
-                new FileWriter(Constants.HIGH_SCORE_FILE, false));
+        BufferedWriter writer = new BufferedWriter
+                (new FileWriter(Constants.HIGH_SCORE_FILE, false));
         writer.write(stringOfHighScore);
         writer.flush();
         writer.close();

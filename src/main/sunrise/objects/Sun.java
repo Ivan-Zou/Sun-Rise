@@ -4,8 +4,10 @@ import src.main.sunrise.mechanics.GameField;
 import src.main.sunrise.misc.Constants;
 import src.main.sunrise.misc.Direction;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.ImageIcon;
+
+import java.awt.Image;
+import java.awt.Graphics;
 
 public class Sun {
     private Image sunImage;

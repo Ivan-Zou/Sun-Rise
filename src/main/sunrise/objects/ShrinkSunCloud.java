@@ -4,7 +4,7 @@ import src.main.sunrise.misc.Constants;
 import src.main.sunrise.misc.Direction;
 import src.main.sunrise.mechanics.GameField;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class ShrinkSunCloud extends Cloud {
     public ShrinkSunCloud(int x, int y, int width, Direction d) {

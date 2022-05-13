@@ -5,7 +5,7 @@ import src.main.sunrise.misc.Direction;
 import src.main.sunrise.mechanics.GameField;
 import src.main.sunrise.gamedata.Scores;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class PointCloud extends Cloud {
     public PointCloud(int x, int y, int width, Direction d) {

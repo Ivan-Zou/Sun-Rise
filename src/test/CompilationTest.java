@@ -1,10 +1,13 @@
 package src.test;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
+
 import src.main.Game;
 
-import static org.junit.jupiter.api.Assertions.*;
-import java.lang.reflect.*;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 /**
  * This code makes sure that your Game class has a
@@ -15,7 +18,6 @@ import java.lang.reflect.*;
 public class CompilationTest {
 
     @Test
-
     public void testMain() {
         String error = ("Error: Your submission must include a class called " +
                 "\"Game\" in package \"org.cis120\" with a main method:\n" +
