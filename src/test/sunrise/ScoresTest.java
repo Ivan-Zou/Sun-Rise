@@ -1,8 +1,8 @@
-package src.test.sunrise;
+package test.sunrise;
 
 import org.junit.jupiter.api.Test;
 
-import src.main.sunrise.gamedata.Scores;
+import main.sunrise.gamedata.Scores;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

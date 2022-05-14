@@ -1,13 +1,12 @@
-package src.test;
+package test;
 
 import org.junit.jupiter.api.Test;
-
-import src.main.Game;
-
-import static org.junit.jupiter.api.Assertions.fail;
+import main.Game;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * This code makes sure that your Game class has a

@@ -1,4 +1,4 @@
-package src.main.sunrise.misc;
+package main.sunrise.misc;
 
 public class Constants {
     // Game Window/Field constants

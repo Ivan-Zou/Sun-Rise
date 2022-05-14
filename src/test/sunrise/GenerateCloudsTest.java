@@ -1,8 +1,8 @@
-package src.test.sunrise;
+package test.sunrise;
 
 import org.junit.jupiter.api.Test;
 
-import src.main.sunrise.mechanics.GenerateClouds;
+import main.sunrise.mechanics.GenerateClouds;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;

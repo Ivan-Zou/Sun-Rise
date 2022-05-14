@@ -1,12 +1,12 @@
-package src.main.sunrise.mechanics;
+package main.sunrise.mechanics;
 
-import src.main.sunrise.misc.Constants;
-import src.main.sunrise.misc.Direction;
-import src.main.sunrise.misc.Screens;
-import src.main.sunrise.gamedata.GameTimer;
-import src.main.sunrise.gamedata.Scores;
-import src.main.sunrise.objects.Cloud;
-import src.main.sunrise.objects.Sun;
+import main.sunrise.misc.Constants;
+import main.sunrise.misc.Direction;
+import main.sunrise.misc.Screens;
+import main.sunrise.gamedata.GameTimer;
+import main.sunrise.gamedata.Scores;
+import main.sunrise.objects.Cloud;
+import main.sunrise.objects.Sun;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;

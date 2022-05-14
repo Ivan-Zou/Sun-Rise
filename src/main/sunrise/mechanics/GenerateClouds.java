@@ -1,11 +1,11 @@
-package src.main.sunrise.mechanics;
+package main.sunrise.mechanics;
 
-import src.main.sunrise.objects.NormalCloud;
-import src.main.sunrise.objects.PointCloud;
-import src.main.sunrise.objects.ShrinkSunCloud;
-import src.main.sunrise.misc.Constants;
-import src.main.sunrise.misc.Direction;
-import src.main.sunrise.objects.Cloud;
+import main.sunrise.objects.NormalCloud;
+import main.sunrise.objects.PointCloud;
+import main.sunrise.objects.ShrinkSunCloud;
+import main.sunrise.misc.Constants;
+import main.sunrise.misc.Direction;
+import main.sunrise.objects.Cloud;
 
 public class GenerateClouds {
     private static int timer = 0;

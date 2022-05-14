@@ -1,6 +1,6 @@
-package src.main.sunrise.gamedata;
+package main.sunrise.gamedata;
 
-import src.main.sunrise.misc.Constants;
+import main.sunrise.misc.Constants;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

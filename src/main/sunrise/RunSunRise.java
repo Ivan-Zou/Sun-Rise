@@ -1,7 +1,7 @@
-package src.main.sunrise;
+package main.sunrise;
 
-import src.main.sunrise.mechanics.GameField;
-import src.main.sunrise.misc.Constants;
+import main.sunrise.mechanics.GameField;
+import main.sunrise.misc.Constants;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

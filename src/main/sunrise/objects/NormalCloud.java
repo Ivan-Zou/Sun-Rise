@@ -1,8 +1,8 @@
-package src.main.sunrise.objects;
+package main.sunrise.objects;
 
-import src.main.sunrise.misc.Constants;
-import src.main.sunrise.misc.Direction;
-import src.main.sunrise.mechanics.GameField;
+import main.sunrise.misc.Constants;
+import main.sunrise.misc.Direction;
+import main.sunrise.mechanics.GameField;
 
 import java.awt.Color;
 

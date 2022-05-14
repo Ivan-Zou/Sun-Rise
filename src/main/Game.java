@@ -1,6 +1,6 @@
-package src.main;
+package main;
 
-import src.main.sunrise.RunSunRise;
+import main.sunrise.RunSunRise;
 
 import javax.swing.SwingUtilities;
 

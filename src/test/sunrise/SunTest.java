@@ -1,11 +1,11 @@
-package src.test.sunrise;
+package test.sunrise;
 
 import org.junit.jupiter.api.Test;
 
-import src.main.sunrise.mechanics.GameField;
-import src.main.sunrise.misc.Direction;
-import src.main.sunrise.misc.Screens;
-import src.main.sunrise.objects.Sun;
+import main.sunrise.mechanics.GameField;
+import main.sunrise.misc.Direction;
+import main.sunrise.misc.Screens;
+import main.sunrise.objects.Sun;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
