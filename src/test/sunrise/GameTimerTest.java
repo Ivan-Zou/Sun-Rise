@@ -10,17 +10,17 @@ public class GameTimerTest {
 
     @Test
     public void testConvertNanoSecondsToSecondsPositiveInput() {
-        int oneSecond = GameTimer.convertNanoSecondsToSeconds(1000000000);
+        int oneSecond = GameTimer.nanoToUnit(1000000000);
         assertEquals(1, oneSecond);
-        int twoSeconds = GameTimer.convertNanoSecondsToSeconds(2000000000);
+        int twoSeconds = GameTimer.nanoToUnit(2000000000);
         assertEquals(2, twoSeconds);
     }
 
     @Test
     public void testConvertNanoSecondsToSecondsNegativeInput() {
-        int zeroSecond1 = GameTimer.convertNanoSecondsToSeconds(-1000000000);
+        int zeroSecond1 = GameTimer.nanoToUnit(-1000000000);
         assertEquals(0, zeroSecond1);
-        int zeroSeconds2 = GameTimer.convertNanoSecondsToSeconds(-2000000000);
+        int zeroSeconds2 = GameTimer.nanoToUnit(-2000000000);
         assertEquals(0, zeroSeconds2);
     }
 

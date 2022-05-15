@@ -19,14 +19,14 @@ public class GameTimer {
     }
 
     public void start() {
-        startTime = convertNanoSecondsToSeconds(System.nanoTime());
+        startTime = nanoToUnit(System.nanoTime());
     }
 
     public void end() {
-        endTime = convertNanoSecondsToSeconds(System.nanoTime());
+        endTime = nanoToUnit(System.nanoTime());
     }
 
-    public static int convertNanoSecondsToSeconds(long nano) {
+    public static int nanoToUnit(long nano) {
         if (nano >= 0) {
             return (int) (nano / Math.pow(10,9));
         } else {
