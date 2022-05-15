@@ -10,8 +10,8 @@ import java.awt.Image;
 import java.awt.Graphics;
 
 public class Sun {
-    private Image sunImage;
     private final ImageIcon sunIcon;
+    private Image sunImage;
 
     private int x;
     private int y;

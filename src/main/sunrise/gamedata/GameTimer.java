@@ -9,8 +9,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class GameTimer {
-    private int startTime, endTime;
     private final LinkedList<Integer> times;
+    private int startTime, endTime;
 
     public GameTimer() {
         startTime = 0;

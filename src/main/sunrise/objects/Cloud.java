@@ -10,20 +10,21 @@ import java.awt.Color;
 
 public abstract class Cloud {
     private final int x;
-    private int y;
     private final int width;
     private final int height;
 
     private final Direction direction;
     private final Color color;
 
+    private int y;
+
     public Cloud(int x, int y, int width, int height, Color color, Direction d) {
         this.x = x;
         this.y = y;
         this.width = width;
-        this.color = color;
-        this.direction = d;
         this.height = height;
+        this.direction = d;
+        this.color = color;
     }
 
     public void move() {

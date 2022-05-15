@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class Scores {
-    private int highScore, score;
     private final LinkedList<Integer> allScores;
+    private int highScore, score;
 
     public Scores() {
         score = 0;

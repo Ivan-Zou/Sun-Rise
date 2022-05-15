@@ -30,6 +30,11 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class GameField extends JPanel {
+    private final Scores scores;
+    private final GameTimer gameTimer;
+
+    private final Sun sun;
+
     private Image startScreenImage;
     private Image instructionScreenImage, instructionScreen2Image, instructionScreen3Image;
     private Image skyImage;
@@ -39,33 +44,30 @@ public class GameField extends JPanel {
     private Screens screen;
     private JLabel status, points;
 
-    private final Scores scores;
-    private GameTimer gameTimer;
-
-    private final Sun sun;
     private LinkedList<Cloud> clouds;
 
     private boolean fileIsWritten;
 
     // For Testing Purposes
     public GameField(Sun sun) {
+        scores = new Scores();
+        gameTimer = new GameTimer();
         this.sun = sun;
-        this.screen = Screens.START;
-        this.scores = new Scores();
+        screen = Screens.START;
     }
 
     public GameField(JLabel status, JLabel points) {
+        scores = new Scores();
+        gameTimer = new GameTimer();
+
+        sun = new Sun(Constants.SUN_STARTING_X, Constants.SUN_STARTING_Y,
+                Constants.SUN_RADIUS, Direction.LEFT_SUN);
+
         screen = Screens.START;
 
         this.status = status;
         this.points = points;
 
-        scores = new Scores();
-
-        gameTimer = new GameTimer();
-
-        sun = new Sun(Constants.SUN_STARTING_X, Constants.SUN_STARTING_Y,
-                      Constants.SUN_RADIUS, Direction.LEFT_SUN);
         clouds = new LinkedList<>();
 
         fileIsWritten = false;
