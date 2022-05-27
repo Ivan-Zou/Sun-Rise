@@ -16,9 +16,7 @@ import javax.swing.BorderFactory;
 
 import java.awt.Image;
 import java.awt.Graphics;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -96,14 +94,12 @@ public class GameField extends JPanel {
 
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        Timer timer = new Timer(Constants.REFRESH_RATE, new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    tick();
-                } catch (IOException exception) {
-                    status.setText("FATAL ERROR!!!");
-                    screen = Screens.ERROR;
-                }
+        Timer timer = new Timer(Constants.REFRESH_RATE, actionEvent -> {
+            try {
+                tick();
+            } catch (IOException exception) {
+                status.setText("FATAL ERROR!!!");
+                screen = Screens.ERROR;
             }
         });
 
