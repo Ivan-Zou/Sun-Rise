@@ -12,7 +12,6 @@ import java.awt.BorderLayout;
 public class RunSunRise implements Runnable {
     public void run() {
         final JFrame frame = new JFrame("SUN RISE!!!");
-        frame.setLocation(Constants.WINDOW_LOCATION_X, Constants.WINDOW_LOCATION_Y);
 
         final JPanel points_panel = new JPanel();
         frame.add(points_panel, BorderLayout.NORTH);
@@ -28,8 +27,9 @@ public class RunSunRise implements Runnable {
         frame.add(field, BorderLayout.CENTER);
 
         frame.pack();
+        frame.setVisible(true);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        frame.setLocation(Constants.WINDOW_LOCATION_X, Constants.WINDOW_LOCATION_Y);
     }
 }
