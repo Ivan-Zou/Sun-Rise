@@ -22,8 +22,8 @@ public class Scores {
 
     public void setHighScoreFromFile() {
         try {
-            BufferedReader reader = new BufferedReader
-                    (new FileReader(Constants.HIGH_SCORE_FILE));
+            BufferedReader reader = new BufferedReader(
+                    new FileReader(Constants.HIGH_SCORE_FILE));
             String line = reader.readLine();
             highScore = getHighScoreFromString(line);
             reader.close();
@@ -79,8 +79,8 @@ public class Scores {
     }
 
     private void writeScoresToFile() throws IOException {
-        BufferedWriter writer = new BufferedWriter
-                (new FileWriter(Constants.SCORES_FILE, false));
+        BufferedWriter writer = new BufferedWriter(
+                new FileWriter(Constants.SCORES_FILE, false));
         int gameNumber = 0;
         writer.write("Scores:");
         writer.newLine();
@@ -95,8 +95,8 @@ public class Scores {
 
     private void writeHighScoreToFile() throws IOException {
         String stringOfHighScore = "High Score: " + highScore;
-        BufferedWriter writer = new BufferedWriter
-                (new FileWriter(Constants.HIGH_SCORE_FILE, false));
+        BufferedWriter writer = new BufferedWriter(
+                new FileWriter(Constants.HIGH_SCORE_FILE, false));
         writer.write(stringOfHighScore);
         writer.flush();
         writer.close();
