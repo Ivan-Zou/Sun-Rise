@@ -30,6 +30,6 @@ public class RunSunRise implements Runnable {
         frame.setVisible(true);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocation(Constants.WINDOW_LOCATION_X, Constants.WINDOW_LOCATION_Y);
+        frame.setLocationRelativeTo(null);
     }
 }
