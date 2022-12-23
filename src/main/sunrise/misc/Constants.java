@@ -1,9 +1,7 @@
 package main.sunrise.misc;
 
 public class Constants {
-    // Game Window/Field constants
-    public static final int WINDOW_LOCATION_X = 445;
-    public static final int WINDOW_LOCATION_Y = 50;
+    // Game Field constants
     public static final int FIELD_WIDTH = 500;
     public static final int FIELD_HEIGHT = 500;
     public static final int REFRESH_RATE = 31;
